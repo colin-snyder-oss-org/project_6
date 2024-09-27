@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package federated;
+
+service FederatedLearning {
+    rpc SendModelUpdate(ModelUpdate) returns (ServerResponse);
+    rpc RequestGlobalModel(ClientInfo) returns (GlobalModel);
+}
+
+message ModelUpdate {
+    string client_id = 1;
+    bytes encrypted_weights = 2;
+    bytes mask = 3; // For secure aggregation
+}
+
+message ServerResponse {
+    string status = 1;
+    string message = 2;
+}
+
+message ClientInfo {
+    string client_id = 1;
+}
+
+message GlobalModel {
+    bytes encrypted_weights = 1;
+    int32 aggregation_round = 2;
+}

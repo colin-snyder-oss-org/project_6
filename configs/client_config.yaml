@@ -1,0 +1,12 @@
+client:
+  server_host: "localhost"
+  server_port: 50051
+  data_path: "data/client_data/{client_id}/"
+  model_save_path: "data/client_data/{client_id}/model/"
+  batch_size: 32
+  epochs: 5
+  learning_rate: 0.001
+  log_level: "INFO"
+security:
+  enable_encryption: true
+  encryption_method: "Paillier"

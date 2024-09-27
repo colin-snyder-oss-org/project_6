@@ -1,0 +1,14 @@
+server:
+  host: "localhost"
+  port: 50051
+  max_clients: 100
+  aggregation_rounds: 10
+  model_save_path: "data/server_data/global_model/"
+  log_level: "INFO"
+security:
+  enable_secure_aggregation: true
+  differential_privacy:
+    enable: true
+    epsilon: 1.0
+    delta: 1e-5
+    mechanism: "Gaussian"
